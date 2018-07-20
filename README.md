@@ -2,6 +2,7 @@
 factoken
 
 Ubuntu系统(Ubuntu14.04)
+
 1.准备工作
 安装依赖包, 使用以下命令:
 
