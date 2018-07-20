@@ -6,6 +6,7 @@ Ubuntu系统(Ubuntu14.04)
 安装依赖包, 使用以下命令:
 
 apt-get install libdb-dev libdb++-dev libboost-all-dev libssl-dev libminiupnpc-dev libzmq3-dev libevent-dev
+
 2.编译factokend
 进入到src, 使用以下命令:
 
@@ -14,6 +15,7 @@ make –f makefile.unix
 strip factokend
 
 至此factokend编译结束
+
 3.编译钱包factoken
 安装QT依赖包, 然后编译钱包, 使用以下命令:
 
