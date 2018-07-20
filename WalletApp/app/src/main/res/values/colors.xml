@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#de0634</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_point">#c099cc00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="frame_color">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <color name="viewfinder_mask">#90000000</color>
+
+    <!-- foreground -->
+    <color name="fg_significant">#ff000000</color>
+    <color name="fg_less_significant">#ff666666</color>
+    <color name="fg_insignificant">#ffcccccc</color>
+    <color name="fg_error">#ffff0000</color>
+
+    <!-- background -->
+    <color name="bg_bright">#ffffffff</color>
+    <color name="bg_less_bright">#ffe8e8f0</color>
+    <color name="bg_panel">#ffd8d8e0</color>
+    <color name="bg_form">@android:color/white</color>
+    <color name="bg_list">#40ffffff</color>
+    <color name="bg_list_selected">#40808090</color>
+    <color name="bg_dialog_title">@android:color/transparent</color>
+
+
+    <color name="text">#666666</color>
+
+    <color name="line">#d2d2d2</color>
+
+    <!-- password strength -->
+    <color name="fg_password_strength_weak">#ff0000</color>
+    <color name="fg_password_strength_fair">#c06000</color>
+    <color name="fg_password_strength_strong">#00a000</color>
+
+    <!-- scanner -->
+    <color name="scan_mask">#60000000</color>
+    <color name="scan_laser">#cc0000</color>
+    <color name="scan_dot">#ff6600</color>
+    <color name="scan_result_view">#b0000000</color>
+    <color name="scan_result_dots">#c099cc00</color>
+
+    <!-- Trusted Server List -->
+    <color name="trusted_server_bg_no_try">#a0a0a0</color>
+    <color name="trusted_server_bg_success">#20a020</color>
+    <color name="trusted_server_bg_fail">#a02020</color>
+</resources>

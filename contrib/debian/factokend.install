@@ -1,0 +1,2 @@
+debian/bin/factokend usr/bin
+src/factokend usr/lib/factoken

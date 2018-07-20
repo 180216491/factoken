@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=factoken
+Comment=Factoken P2P Cryptocurrency
+Comment[fr]=Factoken, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Factoken, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/factoken
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/factoken80.xpm
+MimeType=x-scheme-handler/factoken;
+Categories=Office;

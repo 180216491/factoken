@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<Preference
+		android:key="about_version"
+		android:title="@string/about_version_title" />
+	<Preference
+		android:summary="© 2017-2018, Factoken Developer Group All Rights Reserved"
+		android:title="@string/about_copyright_title" />
+
+</PreferenceScreen>

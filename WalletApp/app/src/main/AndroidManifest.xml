@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.blockchain.token">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/My.Theme"
+        android:name=".WalletApplication">
+
+        <activity
+            android:name=".ui.WalletActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:launchMode="singleTask"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <data android:mimeType="application/x-tokenx" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".ui.send.SendCoinsActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:label="@string/send_coins_activity_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter android:label="@string/send_coins_activity_title" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="factoken" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter android:label="@string/send_coins_activity_title" >
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <data android:scheme="factoken" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/send_coins_activity_title" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:mimeType="application/factoken-paymentrequest" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/send_coins_activity_title" >
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <data android:mimeType="application/factoken-paymentrequest" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.WebViewActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.SendCoinsQrActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.RequestCoinsActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:label="@string/request_coins_activity_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.AddressBookActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:label="@string/address_book_activity_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.NetworkMonitorActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:label="@string/network_monitor_activity_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.preference.PreferenceActivity"
+            android:label="@string/preferences_activity_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.preference.TrustedServersActivity"
+            android:label="@string/preferences_category_trusted_servers"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.RestoreWalletActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@style/My.Theme.Dialog"
+            android:finishOnTaskLaunch="true"
+            android:taskAffinity=".ui.RestoreWalletActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait">
+            <intent-filter android:label="@string/import_keys_intent_filter_action" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/x-factoken-wallet-backup" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.scan.ScanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".error.ErrorListActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:label="@string/error"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".error.ErrorDeatilsActivity"
+            android:configChanges="keyboard|keyboardHidden"
+            android:label="@string/error_info"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="com.blockchain.token.AddressBookProvider"
+            android:authorities="com.blockchain.token.factoken.address_book"
+            android:exported="false"
+            android:syncable="true"/>
+
+        <provider
+            android:name="com.blockchain.token.FileAttachmentProvider"
+            android:authorities="com.blockchain.token.factoken.file_attachment"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <receiver
+            android:name="com.blockchain.token.WalletBalanceWidgetProvider"
+            android:label="factoken Wallet Balance" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/wallet_balance_widget" />
+        </receiver>
+
+        <service
+            android:name=".service.BlockchainServiceImpl"
+            android:exported="false" />
+
+        <service
+            android:name=".offline.AcceptBluetoothService"
+            android:exported="false" />
+
+        <receiver android:name=".service.AutosyncReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.UpgradeWalletService"
+            android:exported="false" />
+
+        <meta-data
+            android:name="android.nfc.disable_beam_default"
+            android:value="true" />
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+</manifest>

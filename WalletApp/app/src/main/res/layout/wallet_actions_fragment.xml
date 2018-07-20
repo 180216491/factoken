@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:showDividers="middle"
+    android:divider="@drawable/v_line"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/wallet_actions_request"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:background="@null"
+        android:drawableTop="@drawable/received"
+        android:singleLine="true"
+        android:text="@string/button_request_coins"
+        android:textAllCaps="true"
+        android:textColor="@color/text"
+        android:textSize="@dimen/font_size_tiny" />
+
+    <Button
+        android:id="@+id/wallet_actions_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:background="@null"
+        android:drawableTop="@drawable/send"
+        android:singleLine="true"
+        android:text="@string/button_send_coins"
+        android:textAllCaps="true"
+        android:textColor="@color/text"
+        android:textSize="@dimen/font_size_tiny" />
+
+    <Button
+        android:id="@+id/wallet_actions_scan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:background="@null"
+        android:drawableTop="@drawable/scan"
+        android:singleLine="true"
+        android:text="@string/button_scan"
+        android:textAllCaps="true"
+        android:textColor="@color/text"
+        android:textSize="@dimen/font_size_tiny" />
+
+</LinearLayout>

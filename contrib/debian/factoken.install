@@ -1,0 +1,5 @@
+factoken usr/bin
+share/pixmaps/factoken32.xpm usr/share/pixmaps
+share/pixmaps/factoken80.xpm usr/share/pixmaps
+debian/factoken.desktop usr/share/applications
+debian/factoken.protocol usr/share/kde4/services/
