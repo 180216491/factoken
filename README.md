@@ -1,5 +1,5 @@
 
-#factoken
+factoken
 
 Ubuntu系统(Ubuntu14.04)
 1.准备工作
