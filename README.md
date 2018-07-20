@@ -1,32 +1,28 @@
 
-Factoken development tree
+factoken
+factoken
+Ubuntu系统(Ubuntu14.04)
+1.准备工作
+安装依赖包, 使用以下命令:
 
-Factoken is a PoS-based cryptocurrency.
+apt-get install libdb-dev libdb++-dev libboost-all-dev libssl-dev libminiupnpc-dev libzmq3-dev libevent-dev
+2.编译factokend
+进入到src, 使用以下命令:
 
-Development process
-===========================
+make –f makefile.unix
 
-Developers work in their own trees, then submit pull requests when
-they think their feature or bug fix is ready.
+strip factokend
 
-The patch will be accepted if there is broad consensus that it is a
-good thing.  Developers should expect to rework and resubmit patches
-if they don't match the project's coding conventions (see coding.txt)
-or are controversial.
+至此factokend编译结束
+3.编译钱包factoken
+安装QT依赖包, 然后编译钱包, 使用以下命令:
 
-The master branch is regularly built and tested, but is not guaranteed
-to be completely stable. Tags are regularly created to indicate new
-stable release versions of factoken.
+apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libqrencode-dev
 
-Feature branches are created when there are major new features being
-worked on by several people.
+进入到factoken.pro文件所在目录(src的上一级)
 
-From time to time a pull request will become outdated. If this occurs, and
-the pull is no longer automatically mergeable; a comment on the pull will
-be used to issue a warning of closure. The pull will be closed 15 days
-after the warning if action is not taken by the author. Pull requests closed
-in this manner will have their corresponding issue labeled 'stagnant'.
+/usr/lib/x86_64-linux-gnu/qt5/bin/qmake factoken.pro
 
-Issues with no commits will be given a similar warning, and closed after
-15 days from their last activity. Issues closed in this manner will be 
-labeled 'stale'.
+make
+
+编译结束将在factoken.pro同一级目录下看到钱包文件factoken
